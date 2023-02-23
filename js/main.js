@@ -18,6 +18,7 @@ const nominativoDom = document.querySelector("#nominativo");
 const tipologiaBigliettoDom = document.querySelector("#tipologiaBiglietto");
 const numeroCarrozzaDom = document.querySelector("#numeroCarrozza");
 const numeroPrenotazioneDom = document.querySelector("#numeroPrenotazione");
+const ticketInfoDom = document.querySelector("#ticketinfo");
 
 //Definizione Nome Cognome
 const nomeCognomeInputDom = document.getElementById("nomeCognome");
@@ -49,6 +50,9 @@ generaDom.addEventListener ('click',
         const nomeCognomeDom = nomeCognomeInputDom.value;
         const lunghezzaTragittoDom = parseInt(lunghezzaTragittoInputDom.value);
         const fasciaEtaDom = fasciaEtaInputDom.value;
+
+        //Display ticketinfo
+        ticketInfoDom.className = "bg-white visible";
         
         //Calcolo tariffa per fascia d'età
 
@@ -134,7 +138,6 @@ generaDom.addEventListener ('click',
         const numeroPrenotazione = Math.floor((Math.random() * 99999)) + 1;
         numeroPrenotazioneDom.innerHTML = `${numeroPrenotazione}`;
 
-
     }
 
 
@@ -152,6 +155,9 @@ annullaDom.addEventListener('click',
         nomeCognomeInputDom.value = "";
         lunghezzaTragittoInputDom.value = "";
         fasciaEtaInputDom.value = "vuoto";
+
+        //Display ticketinfo
+        ticketInfoDom.className = "bg-white hidden";
     }
 )
 
