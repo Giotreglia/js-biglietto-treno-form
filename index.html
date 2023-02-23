@@ -10,31 +10,70 @@
 <body>
 
     <main>
-        <form action="">
-            <label for="nomeCognome">Nome Cognome</label>
-            <input type="text" id="nomeCognome"/>
-            <label for="lunghezzaTragitto">Km da percorrere</label>
-            <input type="text" id="lunghezzaTragitto"/>
-            <label for="fasciaEta">Fascia d'età</label>
-            <select name="fasciaEta" id="fasciaEta">
-                <option value="vuoto"></option>
-                <option value="minorenne">Minorenne</option>
-                <option value="maggiorenne">Maggiorenne</option>
-                <option value="over65">Over 65</option>
-            </select>
+        <div class="container">
 
-        </form>
+            <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+            <section id="inputarea" class="bg-white">
+                <form class="d-flex">
+                    <div>
+                        <label for="nomeCognome" class="block">Nome Cognome</label>
+                        <input type="text" id="nomeCognome" class="block"/>
+                    </div>
+                    <div>
+                        <label for="lunghezzaTragitto" class="block">Km da percorrere</label>
+                        <input type="text" id="lunghezzaTragitto" class="block"/>
+                    </div>
+                    <div>
+                        <label for="fasciaEta" class="block">Fascia d'età</label>
+                        <select name="fasciaEta" id="fasciaEta" class="block">
+                            <option value="vuoto"></option>
+                            <option value="minorenne">Minorenne</option>
+                            <option value="maggiorenne">Maggiorenne</option>
+                            <option value="over65">Over 65</option>
+                        </select>
+                    </div>
+                </form>
+                <div>
+                    <button id="genera">Genera</button>
+                    <button id="annulla">Annulla</button>
+                </div>
+            </section>
+    
+            <h1>IL TUO BIGLIETTO</h1>
+            <section id="ticketinfo" class="bg-white">
+                <div class="container-bottom">
+                    <h3>DETTAGLIO PASSEGGERI</h3>
+                    <div class="d-flex">
+                        <div id="nominativo-container" class="bg-grey">
+                            <h5>NOME PASSEGGERO</h5>
+                            <span id="nominativo"></span>
+                        </div>
+                        <div id="info-container">
+                            <div>
+                                <h5>Offerta</h5>
+                                <span id="tipologiaBiglietto"></span>
+                            </div>
+                            <div>
+                                <h5>Carrozza</h5>
+                                <span id="numeroCarrozza"></span>
+                            </div>
+                            <div>
+                                <h5>Codice CP</h5>
+                                <span id="numeroPrenotazione"></span>
+                            </div>
+                            <div>
+                                <h5>Costo biglietto</h5>
+                                <span id="prezzoBiglietto"></span>
+                                <span id="sconto"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+            
+                </div>
+            </section>    
 
-        <button id="genera">Genera</button>
-        <button id="annulla">Annulla</button>
-
-        <h1 id="prezzoBiglietto"></h1>
-        <h2 id="sconto"></h2>
-
-        <span id="nominativo"></span>
-        <span id="tipologiaBiglietto"></span>
-        <span id="numeroCarrozza"></span>
-        <span id="numeroPrenotazione"></span>
+        </div>
 
     </main>
 

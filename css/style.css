@@ -3,3 +3,103 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+/* Utility */
+
+.block {
+    display: block;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-grey {
+    background-color: grey;
+}
+
+#inputarea {
+    border-radius: 10px;
+    padding: 50px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+#ticketinfo {
+    border-radius: 10px;
+    padding: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#inputarea form {
+    gap: 2rem;
+}
+
+#inputarea form input, #inputarea form select {
+    margin: 1.5rem 0 2rem;
+}
+
+#genera, #annulla {
+    margin: 0 1rem;
+    padding: 5px 8px;
+}
+
+main {
+    background-color: brown;
+    height: 100vh;
+}
+
+.container {
+    width: 1170px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nominativo-container {
+    height: 150px;
+    padding: 1rem;
+}
+
+#info-container {
+    height: 150px;
+    padding: 1rem;
+    border: solid 1px black;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#info-container h5, #nominativo-container h5 {
+    margin-bottom: 4rem;
+    font-size: 1.2rem;
+}
+
+#info-container span, #nominativo-container span {
+    margin-bottom: 4rem;
+    font-size: 1.1rem;
+}
+
+#prezzBiglietto, #sconto {
+    display: block;   
+}
+
+h1 {
+    margin: 1rem 0;
+    color: white;
+}
+
+
