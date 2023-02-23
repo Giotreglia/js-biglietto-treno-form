@@ -16,7 +16,7 @@ const prezzoBigliettoDom = document.querySelector("#prezzoBiglietto");
 const scontoDom = document.querySelector("#sconto");
 
 //Definizione Nome Cognome
-const NomeCognomeInputDom = document.getElementById("nomeCognome");
+const nomeCognomeInputDom = document.getElementById("nomeCognome");
 
 
 //Definizione Lunghezza Tragitto
@@ -42,7 +42,7 @@ const scontoOver65 = 0.6;
 generaDom.addEventListener ('click',
     function () {
         
-        const NomeCognomeDom = NomeCognomeInputDom.value;
+        const nomeCognomeDom = nomeCognomeInputDom.value;
         const lunghezzaTragittoDom = lunghezzaTragittoInputDom.value;
         const fasciaEtaDom = fasciaEtaInputDom.value;
    
@@ -99,13 +99,32 @@ generaDom.addEventListener ('click',
             prezzoBigliettoDom.innerHTML =
             `€ ${prezzoBiglietto}`
 
+        } else if (fasciaEtaDom == "vuoto") {
+
+            //Azioni
+            prezzoBigliettoDom.innerHTML =
+            `Impossibile calcolare la tariffa, Seleziona fascia d'età`
+
         }
     }
 
     }
 )
 
+//Reset form
 
+annullaDom.addEventListener('click',
+    function () {
+
+        const nomeCognomeInputDom = document.getElementById("nomeCognome");
+        const lunghezzaTragittoInputDom = document.getElementById("lunghezzaTragitto");
+        const fasciaEtaInputDom = document.getElementById("fasciaEta");
+        
+        nomeCognomeInputDom.value = "";
+        lunghezzaTragittoInputDom.value = "";
+        fasciaEtaInputDom.value = "vuoto";
+    }
+)
 
 
 
