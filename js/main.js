@@ -11,8 +11,8 @@
 
 //Definizione elementi dom
 const generaDom = document.querySelector("#genera");
-const annullaDom = document.querySelector("annulla");
-const prezzoBiglietto = document.querySelector("#prezzoBiglietto");
+const annullaDom = document.querySelector("#annulla");
+let prezzoBiglietto = document.querySelector("#prezzoBiglietto");
 const sconto = document.querySelector("#sconto");
 
 //Definizione Nome Cognome
@@ -39,58 +39,59 @@ const scontoOver65 = 0.6;
 
 //Calcolo prezzo biglietto con arrotondamento 2 decimali
 
-generaDom.addEventListener ('click',
-    function() {
-        prezzoBiglietto.innerHTML = 
-        `€ ${prezzoBiglietto}`
-    }
-)
+if (isNaN(lunghezzaTragittoDom)) {
+    prezzoBiglietto.innerHTML = 'Impossibile fare il calcolo, hai inserito qualcosa che non è un numero';
+} else { 
 
-    if (isNaN(lunghezzaTragittoDom)) {
-        prezzoBiglietto.innerHTML = 'Impossibile fare il calcolo, hai inserito qualcosa che non è un numero';
-    } else { 
     
+    if (fasciaEtaDom == "minorenne") { 
+
+        // Under 18 sconto 20%
         
-        if (fasciaEtaDom == "minorenne") { 
-    
-            // Under 18 sconto 20%
-            
-            //Calcolo prezzo scontato
-            let prezzoBigliettoLungo = (lunghezzaTragittoDom * prezzoAlKm) * scontoMinorenni;
-    
-            //Definizione decimali
-            let prezzoBiglietto = prezzoBigliettoLungo.toFixed(2);
-    
-            //Azioni
-            sconto.innerHTML =
-            `Hai usufruito dello sconto del 20% per under 18!`   
-           
-        } else if (fasciaEtaDom == "over65") { 
-    
-            // Over 65 sconto 40% 
-    
-            //Calcolo prezzo scontato
-            let prezzoBigliettoLungo = (lunghezzaTragittoDom * prezzoAlKm) * scontoOver65;
-    
-            //Definizione decimali
-            let prezzoBiglietto = prezzoBigliettoLungo.toFixed(2);
-    
-            //Azioni
-            sconto.innerHTML =
-            `Hai usufruito dello sconto del 40% per over 65!`      
-            
-        } else if (fasciaEtaDom == "maggiorenne") {
-    
-            // Tariffa standard
-    
-            //Calcolo prezzo biglietto
-            let prezzoBigliettoLungo = (lunghezzaTragittoDom * prezzoAlKm);
-    
-            //Definizione decimali
-            let prezzoBiglietto = prezzoBigliettoLungo.toFixed(2); 
-    
-        }
+        //Calcolo prezzo scontato
+        let prezzoBigliettoLungo = (lunghezzaTragittoDom * prezzoAlKm) * scontoMinorenni;
+
+        //Definizione decimali
+        let prezzoBiglietto = prezzoBigliettoLungo.toFixed(2);
+
+        //Azioni
+
+        sconto.innerHTML =
+        `Hai usufruito dello sconto del 20% per under 18!`   
+        
+    } else if (fasciaEtaDom == "over65") { 
+
+        // Over 65 sconto 40% 
+
+        //Calcolo prezzo scontato
+        let prezzoBigliettoLungo = (lunghezzaTragittoDom * prezzoAlKm) * scontoOver65;
+
+        //Definizione decimali
+        let prezzoBiglietto = prezzoBigliettoLungo.toFixed(2);
+
+        //Azioni
+        sconto.innerHTML =
+        `Hai usufruito dello sconto del 40% per over 65!`      
+        
+    } else if (fasciaEtaDom == "maggiorenne") {
+
+        // Tariffa standard
+
+        //Calcolo prezzo biglietto
+        let prezzoBigliettoLungo = (lunghezzaTragittoDom * prezzoAlKm);
+
+        //Definizione decimali
+        let prezzoBiglietto = prezzoBigliettoLungo.toFixed(2); 
+
     }
+}
+
+generaDom.addEventListener ('click',
+function() {
+    let prezzoBiglietto = 
+    `€ ${prezzoBiglietto}`
+}
+)
 
 
 
