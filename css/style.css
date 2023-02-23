@@ -92,9 +92,13 @@ main {
     justify-content: space-between;
 }
 
-#info-container h5, #nominativo-container h5 {
+#info-container h5 {
     margin-bottom: 4rem;
     font-size: 1.2rem;
+}
+
+#nominativo-container h4 {
+    margin-bottom: 3rem;
 }
 
 #info-container span, #nominativo-container span {
